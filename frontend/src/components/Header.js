@@ -44,9 +44,9 @@ export default function Header() {
     }}>
       {/* Kiri */}
       <div style={{ fontSize: '14px' }}>
-        <span style={{ opacity: 0.8 }}>Pages</span>
+        {/* <span style={{ opacity: 0.8 }}>Pages</span>
         <span style={{ margin: '0 4px' }}>/</span>
-        <span style={{ fontWeight: 'bold' }}>Dashboard</span>
+        <span style={{ fontWeight: 'bold' }}>Dashboard</span> */}
       </div>
 
       {/* Kanan */}
