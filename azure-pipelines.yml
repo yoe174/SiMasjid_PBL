@@ -1,0 +1,56 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  phpVersion: 8.1
+  nodeVersion: '20.x'
+
+steps:
+# Step 1: Set PHP version
+- task: UsePhpVersion@0
+  inputs:
+    version: '$(phpVersion)'
+  displayName: 'Use PHP $(phpVersion)'
+
+# Step 2: Install Composer dependencies (Laravel)
+- script: composer install --no-interaction --prefer-dist --optimize-autoloader
+  displayName: 'Composer Install Laravel'
+
+# Step 3: Setup .env file
+- script: cp .env.example .env
+  displayName: 'Copy .env file'
+
+# Step 4: Generate Laravel APP key
+- script: php artisan key:generate
+  displayName: 'Generate Laravel APP Key'
+
+# Step 5: Set folder permissions (storage and cache for Laravel)
+- script: |
+    chmod -R 775 storage
+    chmod -R 775 bootstrap/cache
+  displayName: 'Set permissions for storage and cache'
+
+# Step 6: Install Node.js (Next.js)
+- task: NodeTool@0
+  inputs:
+    versionSpec: '$(nodeVersion)'
+  displayName: 'Install Node.js'
+
+# Step 7: Install npm dependencies for Next.js
+- script: npm install
+  displayName: 'Install npm dependencies'
+
+# Step 8: Build Next.js frontend
+- script: npm run build
+  displayName: 'Build Next.js frontend'
+
+# Step 9: Run Laravel tests (opsional)
+- script: php artisan test
+  displayName: 'Run Laravel Tests'
+
+# Step 10: Run Next.js tests (opsional)
+- script: npm run test
+  displayName: 'Run Next.js Tests'
