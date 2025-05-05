@@ -12,6 +12,9 @@ class userController extends Controller
     public function index()
     {
         $users = userModel::all();
+
+        $users = userModel::with('role')->get();
+        
         return response()->json($users);
     }
 
@@ -21,7 +24,7 @@ class userController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|string|min:6',
+            'password' => 'required|string|min:8',
         ]);
 
         $user = userModel::create([

@@ -32,51 +32,75 @@
 // }
 
 // src/components/Header.js
+// export default function Header() {
+//   return (
+//     <header style={{
+//       backgroundColor: '#0b774a',
+//       color: 'white',
+//       padding: '12px 24px',
+//       display: 'flex',
+//       justifyContent: 'space-between',
+//       alignItems: 'center'
+//     }}>
+//       {/* Kiri */}
+//       <div style={{ fontSize: '14px' }}>
+//         {/* <span style={{ opacity: 0.8 }}>Pages</span>
+//         <span style={{ margin: '0 4px' }}>/</span>
+//         <span style={{ fontWeight: 'bold' }}>Dashboard</span> */}
+//       </div>
+
+//       {/* Kanan */}
+//       <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+//         {/* Search */}
+//         <div style={{
+//           display: 'flex',
+//           alignItems: 'center',
+//           backgroundColor: 'white',
+//           padding: '4px 8px',
+//           borderRadius: '6px',
+//           color: 'gray'
+//         }}>
+//           🔍
+//           <input
+//             type="text"
+//             placeholder="Cari"
+//             style={{
+//               border: 'none',
+//               outline: 'none',
+//               marginLeft: '8px',
+//               fontSize: '14px'
+//             }}
+//           />
+//         </div>
+
+//         {/* Icons */}
+//         <span>👤</span>
+//         <span>🔔</span>
+//       </div>
+//     </header>
+//   );
+// }
+
 export default function Header() {
   return (
-    <header style={{
-      backgroundColor: '#0b774a',
-      color: 'white',
-      padding: '12px 24px',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center'
-    }}>
+    <header className="bg-green-700 text-white px-6 py-3 flex justify-between items-center">
       {/* Kiri */}
-      <div style={{ fontSize: '14px' }}>
-        {/* <span style={{ opacity: 0.8 }}>Pages</span>
-        <span style={{ margin: '0 4px' }}>/</span>
-        <span style={{ fontWeight: 'bold' }}>Dashboard</span> */}
-      </div>
+      <div className="text-sm font-semibold tracking-wide">SI MASJID</div>
 
       {/* Kanan */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-        {/* Search */}
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          backgroundColor: 'white',
-          padding: '4px 8px',
-          borderRadius: '6px',
-          color: 'gray'
-        }}>
+      <div className="flex items-center gap-4">
+        <div className="flex items-center bg-white text-gray-600 rounded px-3 py-1">
           🔍
           <input
             type="text"
             placeholder="Cari"
-            style={{
-              border: 'none',
-              outline: 'none',
-              marginLeft: '8px',
-              fontSize: '14px'
-            }}
+            className="ml-2 outline-none border-none text-sm"
           />
         </div>
-
-        {/* Icons */}
         <span>👤</span>
         <span>🔔</span>
       </div>
     </header>
   );
 }
+

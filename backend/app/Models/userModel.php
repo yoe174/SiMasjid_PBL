@@ -27,8 +27,9 @@ class userModel extends Model
     }
 
     public function index()
-{
-    $users = userModel::all();
-    return response()->json($users); // Pastikan ini mengembalikan JSON
-}
+    {
+        $users = userModel::all();
+        return response()->json($users); // Pastikan ini mengembalikan JSON
+        
+    }
 }

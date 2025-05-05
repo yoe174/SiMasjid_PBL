@@ -6,28 +6,30 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const metadata = {
-  title: 'Sistem Informasi',
-  description: 'Aplikasi Next.js + Laravel',
+  title: 'Si Masjid',
+  description: 'Sistem Informasi Tempat Ibadah',
 };
 
+// app/layout.tsx
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col bg-gray-50">
+      <body className="min-h-screen bg-white flex flex-col">
         {/* Header */}
         <Header />
-
-        {/* Navbar */}
-        <Navbar />
-
-        {/* Main Content */}
-        <main className="flex-1 p-4">
-          {children}
-        </main>
-
+        {/* Main Layout: Konten kiri + Sidebar kanan */}
+        <div className="flex flex-1">
+          {/* Sidebar kanan */}
+          <Navbar />
+          {/* Konten kiri */}
+          <main className="flex-1 p-4 bg-white text-gray-800">
+            {children}
+          </main>
+        </div>
         {/* Footer */}
         <Footer />
       </body>
     </html>
   );
 }
+
