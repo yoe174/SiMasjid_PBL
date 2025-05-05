@@ -34,7 +34,7 @@
 | Yonatan Efrassetyo  | Backend Developer| yefrassetyo@gmail.com           |
 | [Nama Anggota 2]  | Frontend Developer| [email@example.com]          |
 | [Nama Anggota 3]  | UI/UX Designer   | [email@example.com]           |
-| [Nama Anggota 4]  | Project Manager  | [email@example.com]           |
+| [Nama Anggota 4]  |QA  | [email@example.com]           |
 
 Kami adalah sekelompok pengembang yang antusias membangun solusi digital yang berdampak.
 
